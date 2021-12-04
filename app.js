@@ -259,7 +259,7 @@ app.get('/api/authors/:id',  (req, res) => {
           });
       })
       app.get('/*', function(req, res) {
-        res.sendFile(path.join(__dirname + '/dist/frontend/index.html'));
+        res.sendFile(path.join(__dirname + '/dist/libraryappfinal/index.html'));
        });
       app.listen(ports,()=>{
         console.log(`Listening to port ${ports}`)
