@@ -102,7 +102,7 @@ return res.status(200).send();
       Userdata.findOne({email:email,password:password},function(err,user){
         let payload = {subject:email+password}
           let token = jwt.sign(payload, 'secretKey')
-        if(email==="admin@library.com" && password==="Admin@123" ){
+        if(email==="admin@gmail.com" && password==="Admin@123" ){
             role="admin";
           res.status(200).send({token,role});
         }
@@ -258,9 +258,9 @@ app.get('/api/authors/:id',  (req, res) => {
               res.send(book);
           });
       })
-      app.get('/*', function(req, res) {
-        res.sendFile(path.join(__dirname + '/dist/libraryappfinal/index.html'));
-       });
+      // app.get('/*', function(req, res) {
+      //   res.sendFile(path.join(__dirname + '/dist/libraryappfinal/index.html'));
+      //  });
       app.listen(ports,()=>{
         console.log(`Listening to port ${ports}`)
     })
