@@ -180,7 +180,7 @@ app.get('/api/authors/:id',  (req, res) => {
   })
 
  
-  app.delete('/remove/:id',(req,res)=>{
+  app.delete('/api/remove/:id',(req,res)=>{
    
     id = req.params.id;
     Bookdata.findByIdAndDelete({"_id":id})
@@ -189,7 +189,7 @@ app.get('/api/authors/:id',  (req, res) => {
         res.send();
     })
   })
-  app.delete('/remove/authors/:id',(req,res)=>{
+  app.delete('/api/remove/authors/:id',(req,res)=>{
    
     id = req.params.id;
     Authordata.findByIdAndDelete({"_id":id})
@@ -198,7 +198,7 @@ app.get('/api/authors/:id',  (req, res) => {
         res.send();
     })
   })
-  app.put('/update',(req,res)=>{
+  app.put('/api/update',(req,res)=>{
     console.log(req.body)
     id=req.body._id,
     title= req.body.title,
@@ -223,7 +223,7 @@ app.get('/api/authors/:id',  (req, res) => {
    })
  })
 
- app.put('/authors/update',(req,res)=>{
+ app.put('/api/authors/update',(req,res)=>{
     console.log(req.body)
     id=req.body._id,
     author = req.body.author,
